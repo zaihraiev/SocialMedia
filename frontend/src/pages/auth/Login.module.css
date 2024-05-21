@@ -7,7 +7,47 @@
 }
 
 .login_wrapper {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+}
+
+.login_form {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login_input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e4e6eb;
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    box-sizing: border-box; 
+}
+
+.login_input:focus {
+    border-color: #0866ff;
+    box-shadow: 0 0 0 2px #e7f3ff;
+    caret-color: #0866ff;
+    outline: none;
+}
+
+.login_button {
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    background: #0866ff;
+    border: unset;
+    cursor: pointer;
 }
 
 .login_wrap {
@@ -16,8 +56,97 @@
     gap: 20px;
 }
 
+@media screen and (max-width: 992px){
+    .login_wrap {
+        flex-direction: column;
+    }
+}
+
+.login_form_wrap {
+    width: 400px;
+}
+
 .login_2 {
     padding: 20px;
     border-radius: 10px;
     background: white;
+}
+
+.login_1 {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+.login_1 span {
+    font-size: 20px;
+}
+
+.login_link__wrap {
+    margin: 10px 0;
+    text-align: center;
+}
+.login_link {
+    color: #0866ff;
+    text-decoration: none;
+}
+
+.register_button__wrap {
+    margin: 20px 0;
+    text-align: center;
+}
+    
+.register_button {
+    width: 80%;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    background: #42b72a;
+    border: unset;
+    cursor: pointer;
+}
+
+.create_page_link__wrap {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.create_page_link {
+    text-decoration: none;
+}
+
+.login .block_split {
+    align-items: center;
+    border-bottom: 1px solid #dadde1;
+    display: flex;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+@media screen and (min-width: 992px){
+    .login_1 {
+        width: 50%;
+        text-align: start;
+    }
+
+    .login_form_wrap {
+        width: 50%;
+    }
+    
+    .login_1 img {
+        margin-left: -1.7rem;
+    }
+
+    .login_1 span {
+        padding: 0 20px;
+        text-wrap: wrap;
+        display: block;
+    }
+}
+
+.login_footer {
+    margin: 20px 0;
+    text-align: center;
 }

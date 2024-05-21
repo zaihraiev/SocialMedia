@@ -1,0 +1,163 @@
+.register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: #fff;
+    box-shadow: 0 1px 2px #b0b3b8;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+.register_header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.register_header span:first-of-type {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.exit_icon {
+    right: 15px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.register_body {
+    border-top: 1px solid #b0b3b8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.register input {
+    border: 1px solid #b0b3b8;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.first_data_unit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.half_input {
+    width: calc(50% - 5px) !important;
+    margin: auto;
+}
+
+.first_data_unit input {
+    width: 100%;
+    margin: auto;
+    background-color: rgb(245, 246, 247);
+}
+
+.register input:focus {
+    border-color: #0866ff;
+    box-shadow: 0 0 0 2px #e7f3ff;
+    caret-color: #0866ff;
+    outline: none;
+}
+
+.second_data_unit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.date_unit {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.date_unit_wrapper {
+    width: 100%;
+}
+
+.date_unit select {
+    flex-basis: 100%;
+    min-width: 115px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #b0b3b8;
+    border-radius: 5px;
+}
+
+.gender_unit {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.register_checkbox_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.register_checkbox_wrapper span {
+    min-width: 115px;
+    padding: 10px;
+    border: 1px solid #b0b3b8;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rounded_checkbox {
+    clip-path: circle(100% at 50% 50%);
+    vertical-align: middle;
+}
+
+.icon_space {
+    translate: 3px 3px;
+}
+
+.input_space {
+    translate: 0 5%;
+    cursor: pointer;
+}
+
+.register_checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.register_checkbox label {
+    cursor: pointer;
+}
+
+.title_unit {
+    margin-bottom: 5px;
+}
+
+.register_button {
+    display: block;
+    padding: 8px;
+    width: 65%;
+    border: none;
+    border-radius: 5px;
+    background-color: #00a400;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: auto;
+}

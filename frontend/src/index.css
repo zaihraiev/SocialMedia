@@ -35,3 +35,22 @@ a {
   --shadow-3: rgba(0, 0, 0, 0.3);
   --shadow-inset: rgba(255, 255, 255, 0.5);
 }
+
+footer {
+  display: flex;
+  flex-basis: 80%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(2555, 255,255, 0.769);
+  z-index: 99;
+}
