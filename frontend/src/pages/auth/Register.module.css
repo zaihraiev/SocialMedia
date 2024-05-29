@@ -10,6 +10,20 @@
     height: fit-content;
 }
 
+.animate_register {
+    animation: slide-in-from-bottom 0.7s ease-out;
+}
+
+@keyframes slide-in-from-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .register_header {
     position: relative;
     display: flex;
@@ -161,3 +175,4 @@
     cursor: pointer;
     margin: auto;
 }
+

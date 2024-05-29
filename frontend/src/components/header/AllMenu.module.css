@@ -1,0 +1,100 @@
+.allMenu_wrapper {
+    display: block;
+    position: absolute;
+    width: 650px;
+    background: #F7F8FA;
+    border-radius: 20px;
+    box-shadow: 0 12px 12px #c7c7c7, inset 0 0 0 0 #c7c7c7;
+    translate: -25% 54%;
+    padding: 10px;
+}
+
+.allMenu_container {
+    overflow-y: scroll;
+    min-height: 400px;
+    height: fit-content;
+    max-height: 600px;
+    padding: 10px;
+}
+
+.allMenu_wrap {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.allMenu_units_divider {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0px 4px #c7c7c7, inset 0 0 0 0 #c7c7c7;
+    height: fit-content;
+}
+
+.allMenu_units_divider_left {
+    flex: 3;
+}
+
+.allMenu_units_divider_right {
+    flex: 1;
+}
+
+.allMenu_unit_item {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.allMenu_unit_item:hover {
+    background: #e0e0ff;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.allMenu_unit_item img {
+    width: 40px;
+    height: 40px;
+}
+
+.allMenu_unit_item_desc h5 {
+    font-size: 17px;
+}
+
+.allMenu_unit_item_desc p {
+    font-size: 14px;
+}
+
+.allMenu_units_block {
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 10px;
+}
+
+.allMenu_units_block:not(first-child) {
+    margin-top: 10px;
+}
+
+.search_scroll {
+    &::-webkit-scrollbar {
+        width: 12px; /* Width of the vertical scrollbar */
+        height: 12px; /* Height of the horizontal scrollbar */
+    }
+
+    /* Style for the scrollbar track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Color of the track */
+        border-radius: 10px; /* Rounded corners for the track */
+    }
+
+    /* Style for the scrollbar thumb */
+    &::-webkit-scrollbar-thumb {
+        background: #888; /* Color of the thumb */
+        border-radius: 10px; /* Rounded corners for the thumb */
+    }
+
+    /* Hover effect for the scrollbar thumb */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Color of the thumb on hover */
+    }
+}
+

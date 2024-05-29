@@ -1,30 +1,83 @@
 ﻿import Input from "../Input";
 import classes from "../../pages/auth/Login.module.css";
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from "../../store/ui-slice";
+import { ClipLoader } from "react-spinners";
+import { login } from "../../store/auth-slice";
+import Cookies from "js-cookie";
 export default function LoginForm() {
-  function handelSubmit(event) {
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector((state) => state.ui);
+  const navigate = useNavigate();
+
+  const override = {
+    display: "block",
+    margin: "0 auto",
+  };
+
+  async function handelSubmit(event) {
+    dispatch(uiActions.showLoader());
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const data = new FormData(event.target);
     const email = data.get("email");
     const password = data.get("password");
-    console.log(email, password);
+
+    try {
+      const response = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
+
+      if (response.ok) {
+        const { ...data } = await response.json();
+        dispatch(login(data));
+
+        navigate("/");
+      }
+      if (!response.ok) {
+        const data = await response.json();
+        dispatch(uiActions.addErrorMessage(data.message));
+      }
+      dispatch(uiActions.hideLoader());
+    } catch (error) {
+      dispatch(uiActions.addErrorMessage(error.message));
+      dispatch(uiActions.hideLoader());
+    }
+    dispatch(uiActions.hideLoader());
   }
 
   return (
     <Form onSubmit={handelSubmit} className={classes.login_form}>
       <Input
         label="Email address"
-        id="email"
+        name="email"
         type="email"
         className={classes.login_input}
       />
       <Input
         label="Password"
-        id="password"
+        name="password"
         type="password"
         className={classes.login_input}
       />
-      <button className={classes.login_button}>Log in</button>
+      {!isLoading && (
+        <button className={classes.login_button} type="submit">
+          Log in
+        </button>
+      )}
+      <ClipLoader
+        color={"green"}
+        loading={isLoading}
+        size={35}
+        cssOverride={override}
+      />
     </Form>
   );
 }

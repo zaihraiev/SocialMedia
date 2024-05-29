@@ -43,6 +43,8 @@ footer {
   align-items: center;
   text-align: center;
   padding: 20px;
+  position: relative;
+  bottom: -30px;
 }
 
 .blur {
@@ -53,4 +55,82 @@ footer {
   bottom: 0;
   background: rgb(2555, 255,255, 0.769);
   z-index: 99;
+  animation: slide-in-from-bottom 0.7s ease-out;
+}
+
+@keyframes slide-in-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-from-top{
+  0% {
+    opacity: 0;
+    transform: translateY(-3%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.hover1:hover {
+  background: var(--bg-secondary);
+}
+
+.small_circle {
+  position: relative;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 11px;
+  background: var(--bg-third);
+  cursor: pointer;
+  animation: all 0.3s ease-in-out;
+}
+
+.rotate_180 {
+  transform: rotate(180deg);
+}
+
+.animate_down_to_up {
+  animation: slide-in-from-bottom 0.7s ease-out;
+}
+
+.animate_up_to_down {
+  animation: slide-in-from-top 0.7s ease-out;
+}
+
+.left_home {
+  &::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+  }
+ 
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 }

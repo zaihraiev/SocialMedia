@@ -2,7 +2,15 @@
 import classes from "./Login.module.css";
 import { Link } from "react-router-dom";
 import RegisterForm from "../../components/auth/RegisterForm";
+import { useState } from "react";
+
 export default function LoginPage() {
+  const [showRegister, setShowRegister] = useState(false);
+
+  function handleCreateAccountClick() {
+    setShowRegister((state) => !state);
+  }
+
   return (
     <>
       <div className={classes.login}>
@@ -25,7 +33,10 @@ export default function LoginPage() {
                 </p>
                 <div className={classes.block_split}></div>
                 <div className={classes.register_button__wrap}>
-                  <button className={classes.register_button}>
+                  <button
+                    className={classes.register_button}
+                    onClick={handleCreateAccountClick}
+                  >
                     Create an account
                   </button>
                 </div>
@@ -38,7 +49,7 @@ export default function LoginPage() {
               </div>
             </div>
           </div>
-          <RegisterForm />
+          {showRegister && <RegisterForm onClick={handleCreateAccountClick} />}
         </div>
       </div>
       <div className={classes.login_footer}>
