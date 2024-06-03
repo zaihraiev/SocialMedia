@@ -1,13 +1,24 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DisplayAccessibility from "./DisplayAccessibility";
 import HelpSupport from "./HelpSupport";
 import SettingsPrivacy from "./SettingsPrivacy";
 import "./UserMenu.css";
 import useClickOutside from "../../hooks/useClickOutside";
+import Cookies from "js-cookie";
+import { useDispatch } from "react-redux";
+import { logout } from "../../store/auth-slice";
 
 export default function UserMenu({ user }) {
   const [visible, setVisible] = useState(0);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    Cookies.remove("user");
+    dispatch(logout());
+    navigate("/login");
+  }
 
   return (
     <div className="mmenu">
@@ -75,7 +86,7 @@ export default function UserMenu({ user }) {
               <i className="right_icon"></i>
             </div>
           </div>
-          <div className="mmenu_item hover3">
+          <div className="mmenu_item hover3" onClick={handleLogout}>
             <div className="small_circle">
               <i className="logout_filled_icon"></i>
             </div>

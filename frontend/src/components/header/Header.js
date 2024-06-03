@@ -40,9 +40,7 @@ export default function Header() {
   }
 
   function handleOutSideClick() {
-    setShowSearch(false);
     setShowMenu(false);
-    setShowUserMenu(false);
   }
 
   function handleMenuClick() {
@@ -130,8 +128,8 @@ export default function Header() {
           onClick={handleUserMenuClick}
         >
           <ArrowDown />
-          {showUserMenu && <UserMenu />}
         </div>
+        {showUserMenu && <UserMenu />}
       </div>
     </header>
   );

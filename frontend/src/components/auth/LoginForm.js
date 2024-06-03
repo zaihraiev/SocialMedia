@@ -37,6 +37,7 @@ export default function LoginForm() {
 
       if (response.ok) {
         const { ...data } = await response.json();
+        Cookies.set("user", JSON.stringify(data));
         dispatch(login(data));
 
         navigate("/");

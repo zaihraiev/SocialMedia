@@ -27,7 +27,7 @@ export default function LoginPage() {
               <div className={classes.login_2}>
                 <LoginForm />
                 <p className={classes.login_link__wrap}>
-                  <Link to={"password-reset"} className={classes.login_link}>
+                  <Link to={"/reset"} className={classes.login_link}>
                     Forgot password?
                   </Link>
                 </p>

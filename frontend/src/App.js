@@ -4,6 +4,8 @@ import HomePage from "./pages/Home";
 import LoginPage from "./pages/auth/Login";
 import LoggedInRoutes from "./routes/LoggedInRoutes";
 import Profile from "./pages/Profile";
+import Activate from "./pages/Activate";
+import Reset from "./pages/reset/Reset";
 
 const router = createBrowserRouter([
   {
@@ -26,11 +28,23 @@ const router = createBrowserRouter([
           </LoggedInRoutes>
         ),
       },
+      {
+        path: "activate/:token",
+        element: (
+          <LoggedInRoutes>
+            <Activate />
+          </LoggedInRoutes>
+        ),
+      },
     ],
   },
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/reset",
+    element: <Reset />,
   },
 ]);
 

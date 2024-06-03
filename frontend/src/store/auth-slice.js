@@ -11,9 +11,11 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      Cookies.set("user", JSON.stringify(action.payload));
       state.isAuthenticated = true;
       state.user = action.payload;
+    },
+    verify: (state, action) => {
+      return { ...state.user, verified: action.payload };
     },
     logout: (state) => {
       state.isAuthenticated = false;
@@ -22,5 +24,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, verify } = authSlice.actions;
 export const authReducer = authSlice.reducer;
