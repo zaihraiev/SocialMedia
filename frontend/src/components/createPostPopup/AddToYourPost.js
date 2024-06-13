@@ -8,7 +8,7 @@ export default function AddToYourPost({ setShowPrev }) {
       <div
         className="post_header_right hover1"
         onClick={() => {
-          setShowPrev(true);
+          setShowPrev((state) => !state);
         }}
       >
         <Photo color="#45bd62" />
