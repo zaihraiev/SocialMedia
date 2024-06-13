@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     padding-left: 10px;
+    cursor: pointer;
 }
 .create_splitter {
     height: 1px;

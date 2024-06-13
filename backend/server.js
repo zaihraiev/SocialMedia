@@ -6,6 +6,11 @@ const fileUpload = require("express-fileupload");
 
 const { readdirSync } = require("fs");
 const app = express();
+app.use(
+  fileUpload({
+    useTempFiles: true,
+  }),
+);
 app.use(express.json());
 
 let allowed = ["http://localhost:3000"];
@@ -28,11 +33,7 @@ function options(req, res) {
 }
 
 app.use(cors(options));
-app.use(
-  fileUpload({
-    useTempFiles: true,
-  }),
-);
+
 readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
 
 mongoose

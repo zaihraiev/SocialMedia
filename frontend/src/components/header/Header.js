@@ -51,6 +51,10 @@ export default function Header() {
     setShowUserMenu((state) => !state);
   }
 
+  function closeSearch() {
+    setShowSearch(false);
+  }
+
   return (
     <header className={classes.app_header}>
       <div className={classes.header_left_unit}>
@@ -71,7 +75,7 @@ export default function Header() {
             </div>
           </>
         )}
-        <Search showSearch={showSearch} onClick={handleOutSideClick} />
+        <Search showSearch={showSearch} onClick={closeSearch} />
       </div>
       <div className={classes.header_middle_unit}>
         <Link

@@ -5,7 +5,7 @@ export default function LayoutPage() {
   return (
     <>
       <Header />
-      <main style={{ height: "calc(100vh - 160px)", marginTop: "60px" }}>
+      <main style={{ marginTop: "60px" }}>
         <Outlet />
       </main>
       <footer>
