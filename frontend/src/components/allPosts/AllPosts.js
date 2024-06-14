@@ -23,7 +23,7 @@ export default function AllPosts({ user }) {
   return (
     <div className="posts">
       {posts.map((post) => (
-        <Post post={post} key={post.id} />
+        <Post user={user} post={post} key={post.id} />
       ))}
     </div>
   );
