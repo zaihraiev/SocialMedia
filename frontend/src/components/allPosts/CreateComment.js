@@ -48,6 +48,8 @@ export default function CreateComment({ user }) {
     reader.onload = (event) => {
       setCommentImage(event.target.result);
     };
+
+    e.target.value = "";
   }
 
   function handleText(e) {
@@ -109,7 +111,7 @@ export default function CreateComment({ user }) {
         </div>
       </div>
       {commentImage && (
-        <div>
+        <div className="comment_img_preview">
           <img src={commentImage} alt="" />
           <div
             className="small_white_circle"
