@@ -228,3 +228,13 @@ exports.changePassword = async (req, res) => {
     message: "Password has been changed",
   });
 };
+
+exports.getProfile = async (req, res) => {
+  try {
+    const username = req.params.username;
+    const user = await User.findOne({ username: username }).select("-password");
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

@@ -3,7 +3,7 @@ import LayoutPage from "./pages/Layout";
 import HomePage from "./pages/Home";
 import LoginPage from "./pages/auth/Login";
 import LoggedInRoutes from "./routes/LoggedInRoutes";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile/Profile";
 import Activate from "./pages/Activate";
 import Reset from "./pages/reset/Reset";
 
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "profile",
+        path: "profile/:username",
         element: (
           <LoggedInRoutes>
             <Profile />
