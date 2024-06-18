@@ -100,7 +100,7 @@ export default function Header() {
       </div>
       <div className={classes.header_right_unit}>
         <Link
-          to="/profile"
+          to={`/profile/${user?.username}`}
           className={`${classes.profile_link} ${classes.hover1}`}
         >
           <img

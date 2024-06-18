@@ -233,6 +233,11 @@ exports.getProfile = async (req, res) => {
   try {
     const username = req.params.username;
     const user = await User.findOne({ username: username }).select("-password");
+
+    if (!user) {
+      return res.json({ ok: false });
+    }
+
     res.json(user);
   } catch (error) {
     res.status(500).json({ message: error.message });

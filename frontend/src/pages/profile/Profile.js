@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { profileActions } from "../../store/profile-slice";
+import "./Profile.css";
+import Cover from "./Cover";
+import ProfielPictureInfos from "./ProfielPictureInfos";
+import ProfileMenu from "./ProfileMenu";
 
 export default function Profile() {
   const { username } = useParams();
@@ -29,6 +33,8 @@ export default function Profile() {
         if (profile.ok) {
           const data = await profile.json();
           dispatch(profileActions.profileSuccess(data));
+
+          return;
         }
         dispatch(profileActions.profileError(profile.statusText));
       } catch (error) {
@@ -40,8 +46,14 @@ export default function Profile() {
   }, [userName]);
   console.log(profile);
   return (
-    <div>
-      <h1>Profile </h1>
+    <div className="profile">
+      <div className="profile_top">
+        <div className="profile_container">
+          <Cover cover={profile?.cover} />
+          <ProfielPictureInfos profile={profile} />
+          <ProfileMenu />
+        </div>
+      </div>
     </div>
   );
 }
