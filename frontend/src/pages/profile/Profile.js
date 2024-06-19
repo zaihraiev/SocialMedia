@@ -6,6 +6,7 @@ import "./Profile.css";
 import Cover from "./Cover";
 import ProfielPictureInfos from "./ProfielPictureInfos";
 import ProfileMenu from "./ProfileMenu";
+import PplYouMayKnow from "./PplYouMayKnow";
 
 export default function Profile() {
   const { username } = useParams();
@@ -44,14 +45,21 @@ export default function Profile() {
 
     getProfile();
   }, [userName]);
-  console.log(profile);
+
   return (
     <div className="profile">
       <div className="profile_top">
         <div className="profile_container">
           <Cover cover={profile?.cover} />
-          <ProfielPictureInfos profile={profile} />
+          {profile && <ProfielPictureInfos profile={profile} />}
           <ProfileMenu />
+        </div>
+      </div>
+      <div className="profile_bottom">
+        <div className="profile_container">
+          <div className="bottom_container">
+            <PplYouMayKnow />
+          </div>
         </div>
       </div>
     </div>
